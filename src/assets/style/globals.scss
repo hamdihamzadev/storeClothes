@@ -1,0 +1,63 @@
+
+@import "@/assets/style/variables.scss";
+
+@font-face {
+    font-family: "IntegralCF" sans-serif;
+    src: url("../font/integralcf-regular.otf") format("opentype") ;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: "IntegralCF" sans-serif;
+    src: url(../font/integralcf-medium.otf) format("opentype") ;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: "IntegralCF" sans-serif;
+    src: url("../font/integralcf-demibold.otf") format("opentype") ;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: "IntegralCF" sans-serif;
+    src: url("../font/integralcf-bold.otf") format("opentype") ;
+    font-weight: 700;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: "IntegralCF" sans-serif;
+    src: url("../font/integralcf-extrabold.otf") format("opentype") ;
+    font-weight: 800;
+    font-style: normal;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'IntegralCF', sans-serif;
+    background-color: $primary-color;
+}
+
+.container{
+    margin-inline: 100px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
