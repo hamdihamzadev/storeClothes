@@ -46,18 +46,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, blockquote, pre, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0px !important;
+}
+ 
 
 
 body{
     font-family: 'IntegralCF', sans-serif;
-    background-color: $primary-color;
 }
 
+
+
 .container{
-    margin-inline: 100px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: center;
+    margin-inline: 100px ;
+    padding: 0px !important;
 }
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 20px;
+  }
+
+  .col {
+    padding: 0 !important;
+  }
+
+
+  @for $i from 1 through 12{
+    .col-lg-#{$i}{
+        padding: 0 !important;
+    }
+
+    .col-md-#{$i}{
+        padding: 0 !important;
+    }
+
+    .col-sm-#{$i}{
+        padding: 0 !important;
+    }
+    
+    .col-#{$i}{
+        padding: 0 !important;
+    }
+  }
+
 

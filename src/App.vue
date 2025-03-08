@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <b-container>
-      <b-row>
-        <b-col v-for="item in 12" :key="item" >
-          <span>hamza</span>
-        </b-col>
-      </b-row>
-    </b-container>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <TopBar/>
+    <HeaderComp/>
     <router-view/>
+    <FooterComp/>
   </div>
 </template>
 
-
-<style>
-#app{
-  color: rgb(31, 31, 31);
+<script>
+import TopBar from './components/TopBar.vue'
+import HeaderComp from './components/HeaderComp.vue'
+import FooterComp from './components/FooterComp.vue';
+export default {
+  name: 'App',
+  components:{
+    TopBar,
+    HeaderComp,
+    FooterComp
+  }
 }
-</style>
+</script>
+
