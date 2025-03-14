@@ -46,8 +46,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, blockquote, pre, table, th, td, form, fieldset, legend, input, textarea, button {
-    margin: 0px !important;
+p, ul, ol, li, dl, dt, dd, blockquote, pre, table, th, td, form, fieldset, legend, input, textarea{
+    margin: 0px ;
+}
+
+@for $i from 1 through 12{
+    h#{$i}{
+        margin-bottom: 0px;
+    }
 }
  
 
@@ -56,39 +62,63 @@ body{
     font-family: 'IntegralCF', sans-serif;
 }
 
-
-
-.container{
-    margin-inline: 100px ;
-    padding: 0px !important;
+.g-4{
+    --bs-gutter-x: 20px;
 }
-.row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    gap: 20px;
-  }
-
-  .col {
-    padding: 0 !important;
-  }
 
 
-  @for $i from 1 through 12{
-    .col-lg-#{$i}{
-        padding: 0 !important;
-    }
+// breakpoint
 
-    .col-md-#{$i}{
-        padding: 0 !important;
-    }
+/* Styles par défaut (X-Small) */
+// .container {
+//     width: 100%;
+//     padding: 0px !important;
+// }
 
-    .col-sm-#{$i}{
-        padding: 0 !important;
-    }
-    
-    .col-#{$i}{
-        padding: 0 !important;
-    }
-  }
+// /* Small devices (≥ 576px) */
+// @media (min-width: 576px) {
+//     .container{
+//         width: 540px;
+//         padding: 0px !important;
+//     }
+// }
+
+// /* Medium devices (≥ 768px) */
+// @media (min-width: 768px) {
+//     .container{
+//         width: 720px;
+//         padding: 0px !important;
+//     }
+// }
+
+// /* Large devices (≥ 992px) */
+// @media (min-width: 992px) {
+//     .container {
+//         width: 960px;
+//         padding: 0px !important;
+//     }
+// }
+
+// /* Extra large devices (≥ 1200px) */
+// @media (min-width: 1200px) {
+//     .container{
+//         width: 1140px;
+//         padding: 0px !important;
+//     }
+// }
+
+// /* XX-Large devices (≥ 1400px) */
+// @media (min-width: 1400px) {
+//     .container{
+//         width: 1240px;
+//         padding: 0px !important;
+//     }
+// }
+
+// .row > *{
+//     padding-left: 10px;
+//     padding-right: 10px;
+// }
+
 
 

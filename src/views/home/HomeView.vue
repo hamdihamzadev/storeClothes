@@ -3,6 +3,9 @@
             <BannerCompo/>
             <BrandsHome/>
             <NewArrivals/>
+            <b-container>
+                <div id="br"></div>
+            </b-container>
             <TopSelling/>
             <DressStyle/>
             <TestimonialsHome/>
@@ -30,3 +33,14 @@ export default{
     }
 }
 </script>
+
+<style lang="scss" scoped>
+#home{
+    #br{
+        height: 1px;
+        width: 100%;
+        background-color: $ui-line-color;
+        margin-block: 96px;
+    }
+}
+</style>
