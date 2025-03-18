@@ -2,8 +2,8 @@
     <section id="testimonials">
         <b-container>
             <div>
-                <div id="testimonial-top"  class="d-flex align-items-center justify-content-between">
-                    <h1 id="title">OUR HAPPY CUSTOMERS</h1>
+                <div id="testimonial-top" class="d-flex align-items-center justify-content-between">
+                    <h1 class="text-start" id="title">OUR HAPPY CUSTOMERS</h1>
                     <div class="d-flex align-items-center justify-content-between gap-2">
                         <b-button id="btn-scroll" @click="showPrev"
                             class="d-flex align-items-center justify-content-center bg-transparent">
@@ -71,12 +71,20 @@
                     arrows: false, // Affiche les flèches de navigation
                     dots: false, // Active la pagination en bas
                     responsive: [{
-                        breakpoint: 768, // Sur mobiles
-                        settings: {
-                            slidesToShow: 1, // Affiche une seule image centrée
-                            centerPadding: "20px"
+                            breakpoint: 1024, // Tablette (taille max)
+                            settings: {
+                                slidesToShow: 2, 
+                                 centerPadding: "0px"
+                            }
+                        },
+                        {
+                            breakpoint: 767, // Sur mobiles
+                            settings: {
+                                slidesToShow: 1, // Affiche une seule image centrée
+                                centerPadding: "0px"
+                            }
                         }
-                    }]
+                    ]
                 }
             }
         },
@@ -95,16 +103,16 @@
 <style lang="scss" scoped>
     #testimonials {
 
-        #testimonial-top{
+        #testimonial-top {
             margin-bottom: 48px;
 
             #title {
-            color: $primary-color;
-            font-size: 48px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-        }
+                color: $primary-color;
+                font-size: 48px;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+            }
         }
 
 
@@ -149,6 +157,133 @@
 
             &:hover {
                 color: $color-body;
+            }
+        }
+    }
+
+    // md
+    @media (min-width: 768px) and (max-width: 991.98px) {
+
+        #testimonials {
+
+            #testimonial-top {
+                margin-bottom: 48px;
+
+                #title {
+                    color: $primary-color;
+                    font-size: 48px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+            }
+
+
+            ::v-deep .slick-track {
+                position: relative;
+            }
+
+            ::v-deep .slick-cloned {
+                width: 240px;
+            }
+
+
+            ::v-deep .slick-track::before {
+                content: '';
+                height: 100%;
+                width: 10px;
+                background-color: black;
+                display: block;
+                position: absolute;
+            }
+
+            ::v-deep .slick-track.slick-center {
+                display: flex;
+                gap: 20px;
+
+            }
+
+            ::v-deep .slick-slide:not(.slick-active) {
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+
+            #btn-scroll {
+                color: $primary-color;
+                font-size: 24px;
+                font-weight: bold;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $color-body;
+                }
+            }
+        }
+    }
+
+    // extra sm - sm
+    @media (max-width:768px) {
+
+
+        #testimonials {
+
+            #testimonial-top {
+                margin-bottom: 32px;
+
+                #title {
+                    font-size: 32px;
+
+
+                }
+            }
+
+
+            ::v-deep .slick-track {
+                position: relative;
+            }
+
+            ::v-deep .slick-cloned {
+                width: 240px;
+            }
+
+
+            ::v-deep .slick-track::before {
+                content: '';
+                height: 100%;
+                width: 10px;
+                background-color: black;
+                display: block;
+                position: absolute;
+            }
+
+            ::v-deep .slick-track.slick-center {
+                display: flex;
+                gap: 20px;
+
+            }
+
+            ::v-deep .slick-slide:not(.slick-active) {
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+
+            #btn-scroll {
+                color: $primary-color;
+                font-size: 24px;
+                font-weight: bold;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $color-body;
+                }
             }
         }
     }

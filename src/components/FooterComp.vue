@@ -5,8 +5,8 @@
                 <div id="newsletter-component" class="position-absolute end-0 start-0">
                     <NewSletter />
                 </div>
-                <b-row id="footer-links">
-                    <b-col>
+                <b-row class="g-4" id="footer-links">
+                    <b-col  cols="12" md="3" >
                         <div id="footer-brand" class="d-flex flex-column">
                             <router-link to="/">
                                 <b-img id="logo" :src="require('@/assets/img/logo.png')" alt="logo"></b-img>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </b-col>
-                    <b-col>
+                    <b-col  cols="6" md="3" >
                         <div id="pages">
                             <p id="title-page">COMPANY</p>
                             <div class="d-flex flex-column" id="grp-links">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </b-col>
-                    <b-col>
+                    <b-col  cols="6" md="3" >
                         <div id="pages">
                             <p id="title-page">HELP</p>
                             <div class="d-flex flex-column" id="grp-links">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     </b-col>
-                    <b-col>
+                    <b-col  cols="6" md="3" >
                         <div id="pages">
                             <p id="title-page">FAQ</p>
                             <div class="d-flex flex-column" id="grp-links">
@@ -75,7 +75,7 @@
                 </b-row>
 
                 <hr>
-                <div id="legal-info" class="d-flex justify-content-between align-items-center">
+                <div id="legal-info" class="d-flex justify-content-between align-items-center flex-column flex-md-row">
                     <p id="copyright">© 2000-2021, All rights reserved</p>
                     <div id="payment">
                         <b-img :src="require('@/assets/img/payment/visa.svg')" alt="payment"></b-img>
@@ -183,4 +183,89 @@
         }
 
     }
+    // extra sm - sm
+    @media (max-width:767px) {
+        footer {
+        background-color: $secondary-color;
+        margin-top: calc(96px + 160px);
+
+        #newsletter-component{
+            top: -140px;
+        }
+
+
+        #footer-links {
+            margin-block: 40px;
+            padding-top: 180px;
+
+            #footer-brand {
+                gap: 24px;
+
+                #logo {
+                    height: 24px;
+                    width: 167px;
+                }
+
+                #description {
+                    color: $color-body;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    width: 75%;
+                }
+
+                #social-media {
+                    gap: 12px;
+
+                    #media-item {
+                        height: 28px;
+                        width: 28px;
+                        background-color: $color-white;
+                        color: $primary-color;
+                        border-radius: 50px;
+                        border: 1px solid $color-body;
+                        font-size: 12px;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            background-color: $primary-color;
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+
+            #pages {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                #title-page {
+                    color: $primary-color;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                #grp-links {
+                    gap: 12px;
+
+                    #link {
+                        color: $color-body;
+                        font-size: 16px;
+                    }
+                }
+
+
+            }
+        }
+
+        #legal-info {
+            #copyright {
+                color: $color-body;
+            }
+        }
+
+    }
+    }
+
 </style>

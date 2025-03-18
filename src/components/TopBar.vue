@@ -8,6 +8,7 @@
                     <p>Sign up and get 20% off to your first order. </p>
                     <router-link id="sign-up" to="/sign-up">Sign Up Now</router-link>
                 </div>
+
                 <b-button id="btn-delete"
                     class="position-absolute end-0 p-0 d-flex align-items-center justify-content-center ">
                     <b-icon v-b-toggle.announcement-bar icon="x" aria-hidden="true"></b-icon>

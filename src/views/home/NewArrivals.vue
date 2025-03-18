@@ -3,18 +3,19 @@
         <b-container>
             <div class="text-center">
                 <h2 id="title">New Arrivals</h2>
-                <b-row id="products"  class="g-4"  >
-                    <b-col  
-                        v-for="item in products" 
-                        :key="item.id"
-                        cols="6"
-                        md="6"
-                        lg="3"                   
-                        >
+                <b-row id="products" class="g-4 d-none d-md-flex">
+                    <b-col v-for="item in products" :key="item.id" cols="3" md="6" lg="3">
                         <ProductCard :name="item.name" :price-after="item.priceAfter" :price-before="item.priceBefore"
                             :price-discount="priceDiscount" :rating="item.rating" />
                     </b-col>
                 </b-row>
+
+                <VueSlickCarousel ref="slick" v-bind="settings"  class="d-md-none" >
+                    <ProductCard v-for="item in products" :key="item.id" :name="item.name"
+                        :price-after="item.priceAfter" :price-before="item.priceBefore" :price-discount="priceDiscount"
+                        :rating="item.rating" />
+                </VueSlickCarousel>
+
                 <b-button id="btn-all">View All</b-button>
             </div>
         </b-container>
@@ -24,10 +25,13 @@
 
 <script>
     import ProductCard from '@/components/ProductCard.vue'
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import "vue-slick-carousel/dist/vue-slick-carousel.css";
     export default {
         name: 'NewArrivals',
         components: {
             ProductCard,
+            VueSlickCarousel
         },
 
         data() {
@@ -64,7 +68,21 @@
                         priceDiscount: 30,
                         rating: 4.5
                     },
-                ]
+                ],
+
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    autoplay: false,
+                    rtl: false,
+                    centerMode: false,
+                    centerPadding: "15px",
+                    variableWidth: true,
+                    adaptiveHeight: true
+                }
             }
         }
     }
@@ -92,5 +110,23 @@
             margin-top: 36px;
         }
 
+    }
+
+    // extra sm -sm
+    @media (max-width:760px) {
+        #newArrivals {
+            margin-top: 64px;
+
+            #title {
+                font-size: 32px;
+                margin-bottom: 32px;
+            }
+
+            ::v-deep .slick-slide{
+                margin-right: 20px;
+                width: 200px;
+            }
+
+        }
     }
 </style>

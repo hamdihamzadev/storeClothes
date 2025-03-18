@@ -1,5 +1,5 @@
 <template>
-    <header class="d-flex align-items-center position-relative">
+    <header class="d-flex align-items-center ">
         <b-container>
             <div class="d-flex align-items-center justify-content-between" id="header-content">
                 <!-- logo  -->
@@ -166,6 +166,7 @@
 <style lang="scss" scoped>
     header {
         height: 96px;
+
 
         #header-content {
             gap: 40px;

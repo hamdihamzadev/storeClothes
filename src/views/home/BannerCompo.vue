@@ -1,8 +1,8 @@
 <template>
     <section id="banner">
         <b-container>
-            <b-row class="d-flex justify-content-between align-items-center">
-                <b-col lg="6">
+            <b-row id="banner-row" class="d-flex justify-content-between ">
+                <b-col xl="6" class="d-flex align-items-center">
                     <div id="banner-content" class="d-flex flex-column">
                         <div id="banner-text" class="d-flex flex-column">
                             <h1 id="title">FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
@@ -13,38 +13,52 @@
                                 Now</b-button>
                         </div>
 
-                        <div id="banner-stats" class="d-flex flex-row text-center justify-content-between">
-                            <div id="statis-item" class="d-flex flex-column flex-fill">
-                                <h1 id="number">200+</h1>
-                                <p id="name-statis-item">International Brands</p>
-                            </div>
-                            <div class="vr "></div>
+                        <b-row id="banner-stats" class="g-4 justify-content-center justify-content-md-between">
+                            <b-col cols="4" md="auto" class="w-auto">
+                                <div id="statis-item" class="d-flex flex-column ">
+                                    <h1 id="number">200+</h1>
+                                    <p id="name-statis-item">International Brands</p>
+                                </div>
+                            </b-col>
 
-                            <div id="statis-item" class="d-flex flex-column flex-fill ">
-                                <h1 id="number">2000+</h1>
-                                <p id="name-statis-item">High-Quality Products</p>
-                            </div>
-                            <div class="vr d-none d-md-block"></div>
+                            <b-col cols="4" md="auto" class="d-flex justify-content-center w-auto">
+                                <div class="vr h-100"></div>
+                            </b-col>
 
-                            <div id="statis-item" class="d-flex flex-column flex-fill ">
-                                <h1 id="number">30,000+</h1>
-                                <p id="name-statis-item">Happy Customers</p>
-                            </div>
+                            <b-col cols="4" md="auto" class="w-auto">
+                                <div id="statis-item" class="d-flex flex-column  ">
+                                    <h1 id="number">2000+</h1>
+                                    <p id="name-statis-item">High-Quality Products</p>
+                                </div>
+                            </b-col>
 
-                        </div>
+                            <b-col md="auto" class="d-none d-md-block w-auto">
+                                <div class="vr h-100 "></div>
+                            </b-col>
+
+                            <b-col cols="12" md="auto" class="d-flex justify-content-center w-auto">
+                                <div id="statis-item" class="d-flex flex-column  ">
+                                    <h1 id="number">30,000+</h1>
+                                    <p id="name-statis-item">Happy Customers</p>
+                                </div>
+                            </b-col>
+                        </b-row>
+
                     </div>
                 </b-col>
-                <b-col lg="5">
-                    <div class="d-flex justify-content-between" id="banner-imgs">
-                        <div class="position-relative ">
-                            <b-img id="star" class="position-absolute" :src="require('@/assets/img/star-banner.svg')">
+                <b-col xl="5" id="col-img">
+                    <div id="banner-imgs" class="d-flex justify-content-center" >
+                        <div class="d-flex align-items-center" >
+                            <b-img id="star-left"  :src="require('@/assets/img/star-banner.svg')">
                             </b-img>
                         </div>
                         <div>
-                            <b-img id="img-model" :src="require('@/assets/img/img-banner.png')"></b-img>
+                            <b-img class="h-auto" id="img-model" :src="require('@/assets/img/img-banner.png')">
+                            </b-img>
                         </div>
                         <div>
-                            <b-img :src="require('@/assets/img/star-banner.svg')"></b-img>
+                            <b-img id="star-right"  :src="require('@/assets/img/star-banner.svg')">
+                            </b-img>
                         </div>
                     </div>
                 </b-col>
@@ -63,10 +77,10 @@
     // lg - xl - xxl
     #banner {
         background-color: $secondary-color;
-        padding-top: 40px;
 
         #banner-content {
             gap: 48px;
+            padding-block: 40px;
 
             #banner-text {
                 gap: 24px;
@@ -104,6 +118,7 @@
                     #number {
                         font-size: 40px;
                         font-weight: bold;
+                        width: fit-content;
                     }
 
                     #name-statis-item {
@@ -111,31 +126,49 @@
                         font-weight: 400;
                         line-height: 22px;
                         color: $color-body;
+                        width: fit-content;
                     }
                 }
             }
         }
 
-        #banner-imgs {
-            #star {
-                top: 50%;
-                width: 50px;
-            }
+        #col-img {
+            padding-top: 40px;
 
-            #img-model {
-                height: 600px;
+            #banner-imgs {
+
+                #star-left {
+                    width: 56px;
+                    left: -56px;
+                    top: 50%;
+                }
+
+
+                #star-right {
+                    width: 100px;
+                    right: -100px;
+                }
+
             }
         }
+
     }
 
     // md
     @media (min-width: 768px) and (max-width: 991.98px) {
+
+        #banner-row {
+            gap: 54px;
+        }
+
         #banner {
             background-color: $secondary-color;
-            padding-top: 40px;
+
 
             #banner-content {
                 gap: 48px;
+                padding-bottom: 0px;
+             
 
                 #banner-text {
                     gap: 24px;
@@ -170,6 +203,7 @@
                         #number {
                             font-size: 40px;
                             font-weight: bold;
+                            width: fit-content;
                         }
 
                         #name-statis-item {
@@ -177,33 +211,48 @@
                             font-weight: 400;
                             line-height: 22px;
                             color: $color-body;
+                            width: fit-content;
                         }
                     }
                 }
             }
 
-            #banner-imgs {
-                #star {
-                    top: 50%;
-                    width: 50px;
-                }
 
-                #img-model {
-                    height: 600px;
+            #col-img {
+                padding-top:0px;
+
+                #banner-imgs {
+
+                    #star-left {
+                        width: 44px;
+                        left: -44px;
+                        top: 50%;
+                    }
+
+                    #star-right {
+                        width: 76px;
+                        right: -76px;
+                    }
+
                 }
             }
         }
-
     }
 
     // extra sm - sm
     @media (max-width:768px) {
+
+        #banner-row {
+            gap: 28px;
+        }
+
         #banner {
             background-color: $secondary-color;
-            padding-top: 40px;
 
             #banner-content {
                 gap: 48px;
+                padding-bottom: 0px;
+
 
                 #banner-text {
                     gap: 16px;
@@ -239,17 +288,30 @@
                 }
             }
 
-            #banner-imgs {
-                #star {
-                    top: 50%;
-                    width: 50px;
-                }
 
-                #img-model {
-                    height: 600px;
+            #col-img {
+                padding-top: 0px;
+
+                #banner-imgs {
+
+                    #img-model{
+                        width: 250px;
+                    }
+
+                    #star-left {
+                        width: 44px;
+                        left: -44px;
+                        top: 50%;
+                    }
+
+                    #star-right {
+                        width: 76px;
+                        right: -76px;
+
+                    }
+
                 }
             }
         }
-
     }
 </style>

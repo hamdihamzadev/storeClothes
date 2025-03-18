@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <TopBar/>
-    <HeaderComp/>
+    <div style="position: sticky; top:0px; width:100%; z-index:500;" >
+      <HeaderComp/>
+    </div>
     <router-view/>
     <FooterComp/>
   </div>
